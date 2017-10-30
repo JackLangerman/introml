@@ -31,34 +31,6 @@ please contact Sundeep Rangan at <srangan@nyu.edu>.
     * [Lab 1: Boston housing data](./simp_lin_reg/lab_housing_partial.ipynb). 
     * Homework 1 [[pdf]](./simp_lin_reg/hw/HW1.pdf) [[Latex]](./simp_lin_reg/hw/HW1.tex)
 * [More `numpy`:  Python broadcasting](./Basics/numpy_axes_broadcasting.ipynb)      
-<<<<<<< HEAD
-<<<<<<< HEAD
-=======
-=======
-<<<<<<< HEAD
->>>>>>> prepull
-* [Multiple linear regression](./mult_lin_reg/readme.md)
-    * [Demo:  Predicting glucose levels](./mult_lin_reg/glucose.ipynb)
-    * [Lab: Calibrating robot dynamics](./mult_lin_reg/lab_robot_calib_partial.ipynb) To be completed by the student.
-* [Model selection and regularization](./model_sel/readme.md)
-    * [Demo:  Polynomial order selection with cross-validation](./model_sel/polyfit.ipynb)
-    * [Demo:  LASSO regression for finding predictors of prostate cancer](./model_sel/prostate.ipynb) 
-    * [Lab: Neural decoding of motor cortex signals](./model_sel/lab_neural_partial.ipynb) To be completed by the student.
-* [Logistic Regression](./logistic/readme.md)
-    * [Demo:  Breast cancer diagnosis via logistic regression](./logistic/breast_cancer.ipynb)
-    * [Lab: Genetic analysis of Down's syndrome in mice](./logistic/lab_gene_partial.ipynb) To be completed by the student.
-* [Nonlinear optimization](./optim/readme.md)
-    * [Demo:  Simple gradient descent optimization](./optim/grad_descent.ipynb)
-    * Lab: To be added soon
-*  Support vector machines (To be added)
-*  Neural networks and the Keras package
-    * [Demo: First neural network in Keras](./neural/synthetic.ipynb)
-    * More to be added
-*  Convolutional and deep networks
-*  PCA (To be added)
-*  Clustering and EM (To be added)
-=======
->>>>>>> master
 * [Unit 2:  Multiple linear regression](./mult_lin_reg/readme.md)
     * [Demo 2:  Predicting glucose levels](./mult_lin_reg/glucose.ipynb)
     * [Lab 2: Calibrating robot dynamics](./mult_lin_reg/lab_robot_calib_partial.ipynb) 
@@ -88,13 +60,5 @@ please contact Sundeep Rangan at <srangan@nyu.edu>.
 * Unit 8:  Convolutional and deep networks
 * Unit 9:  PCA (To be added)
 * Unit 10:  Clustering and EM (To be added)
-<<<<<<< HEAD
->>>>>>> fd31d48b99c7eb38d05ab59df0104be4c1f1eb9f
-=======
-<<<<<<< HEAD
-=======
->>>>>>> fd31d48b99c7eb38d05ab59df0104be4c1f1eb9f
->>>>>>> master
->>>>>>> prepull
     
 
