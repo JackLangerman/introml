@@ -32,8 +32,11 @@ please contact Sundeep Rangan at <srangan@nyu.edu>.
     * Homework 1 [[pdf]](./simp_lin_reg/hw/HW1.pdf) [[Latex]](./simp_lin_reg/hw/HW1.tex)
 * [More `numpy`:  Python broadcasting](./Basics/numpy_axes_broadcasting.ipynb)      
 <<<<<<< HEAD
+<<<<<<< HEAD
+=======
 =======
 <<<<<<< HEAD
+>>>>>>> prepull
 * [Multiple linear regression](./mult_lin_reg/readme.md)
     * [Demo:  Predicting glucose levels](./mult_lin_reg/glucose.ipynb)
     * [Lab: Calibrating robot dynamics](./mult_lin_reg/lab_robot_calib_partial.ipynb) To be completed by the student.
@@ -86,8 +89,12 @@ please contact Sundeep Rangan at <srangan@nyu.edu>.
 * Unit 9:  PCA (To be added)
 * Unit 10:  Clustering and EM (To be added)
 <<<<<<< HEAD
+>>>>>>> fd31d48b99c7eb38d05ab59df0104be4c1f1eb9f
+=======
+<<<<<<< HEAD
 =======
 >>>>>>> fd31d48b99c7eb38d05ab59df0104be4c1f1eb9f
 >>>>>>> master
+>>>>>>> prepull
     
 
