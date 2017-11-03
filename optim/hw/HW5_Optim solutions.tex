@@ -214,6 +214,9 @@ showstringspaces=false            %
 % Python for inline
 \newcommand\pycode[1]{{\pythonstyle\lstinline!#1!}}
 
+%
+
+
 \begin{document}
 
 \title{Introduction to Machine Learning\\
@@ -238,21 +241,21 @@ a nonlinear least squares fit could use the loss function,
     J(\wbf) = \sum_{i=1}^n \left[y_i -
         \frac{1}{w_0 + \sum_{j=1}^d w_jx_{ij}}\right]^2
 \]
-OR
-\[
-	\text{Let } \xbf^{(i)} = 
-    	[1, x_0^{(i)}, x_1^{(i)}, \hdots, x_d^{(i)}] \\
-\]
+% OR
+% \[
+% 	\text{Let } \xbf^{(i)} = 
+%     	[1, x_0^{(i)}, x_1^{(i)}, \hdots, x_d^{(i)}] \\
+% \]
 
-\[
-\bf{u}^{(i)} = y^{(i)} - \frac{1}{\wbf^T \xbf^{(i)}}
-\]
+% \[
+% \bf{u}^{(i)} = y^{(i)} - \frac{1}{\wbf^T \xbf^{(i)}}
+% \]
 
-\[
-    J(\wbf) = \ubf^{(i)T} \ubf^{(i)}
-\]
+% \[
+%     J(\wbf) = \ubf^{(i)T} \ubf^{(i)}
+% \]
 
-\newpage
+% \newpage
 \begin{enumerate}[(a)]
 \item Find a function $g(\zbf)$ and matrix $\Abf$ such that
 the loss function is given by,
@@ -288,32 +291,47 @@ some functions $g_i(z_i)$.
 %     g_i'(z_i) &= 2 \left(y_i - \frac{1}{z_i} \right) \frac{1}{z_i^2}
 % \end{align*}
 
+% \begin{align*}
+% 	g_i'(x) \quad &= \quad 2 \frac{ 1/x - y_i}{x^2}, \qquad
+% 	z_i' = \xbf^{(i)},\qquad  \frac{\partial z_i}{\partial {\wbf_j}} = x^{(i)}_j \\
+%     		\\ %
+% 	\nabla J(\wbf) \quad &= \quad \begin{bmatrix}
+% 						\frac{\partial}{\partial_{\wbf_0}} \\
+%                         \frac{\partial}{\partial_{\wbf_1}} \\
+%                         	\vdots 						   \\
+%                         \frac{\partial}{\partial_{\wbf_d}} \\
+% 					  \end{bmatrix} \\
+%             \\ % 
+%     \frac{\partial J(\wbf)}{\partial \wbf_i} \quad &= \quad \frac{\partial}{\partial \wbf_i} \sum_{j=1}^n g_j(z_j) \quad = \quad \sum_{j=1}^n \frac{\partial}{\partial \wbf_i} g_j(z_j) \\
+%     %
+%     &= \sum_{j=1}^n g_j'(z_j) \cdot z_j' \quad 
+%     		= \quad 2 \sum_{j=1}^n \frac{1/z_j - y_j}{z_j^2} \cdot z'_j
+%     &= 2 \sum_{j=1}^n \frac{1/z_j - y_j}{z_j^2} \cdot z'_j \\
+%     %
+%     &= \sum_{j=1}^n \frac{\partial \; g_j(z_j)}{\partial \; z_j} \cdot 
+%     	\frac{\partial \; z_j}{\partial \wbf_i} \quad
+%         = \quad 2 \sum_{j=1}^n \frac{1/z_j - y_j}{z_j^2} \cdot 
+%         	\frac{\partial \; z_j}{\partial \wbf_i} \\
+%     %
+%     &= 2 \sum_{j=1}^n \frac{1/z_j - y_j}{z_j^2} \cdot x^{(j)}_i
+% \end{align*}
+
+% \newpage
+\[
+	\frac{\partial g_i(z_i)}{\partial z_i} = 2 \left( \frac{1}{z_i} - y_i \right) 
+    	\cdot \frac{1}{z_i^2}
+\]
+\[
+	\frac{\partial z_i}{\partial w_j} = \xbf^{(i)}_j
+\]
 \begin{align*}
-	g_i'(x) \quad &= \quad 2 \frac{ 1/x - y_i}{x^2}, \qquad
-	z_i' = \xbf^{(i)},\qquad  \frac{\partial z_i}{\partial {\wbf_j}} = x^{(i)}_j \\
-    		\\ %
-	\nabla J(\wbf) \quad &= \quad \begin{bmatrix}
-						\frac{\partial}{\partial_{\wbf_0}} \\
-                        \frac{\partial}{\partial_{\wbf_1}} \\
-                        	\vdots 						   \\
-                        \frac{\partial}{\partial_{\wbf_d}} \\
-					  \end{bmatrix} \\
-            \\ % 
-    \frac{\partial J(\wbf)}{\partial \wbf_i} \quad &= \quad \frac{\partial}{\partial \wbf_i} \sum_{j=1}^n g_j(z_j) \quad = \quad \sum_{j=1}^n \frac{\partial}{\partial \wbf_i} g_j(z_j) \\
-    %
-    &= \sum_{j=1}^n g_j'(z_j) \cdot z_j' \quad 
-    		= \quad 2 \sum_{j=1}^n \frac{1/z_j - y_j}{z_j^2} \cdot z'_j
-    &= 2 \sum_{j=1}^n \frac{1/z_j - y_j}{z_j^2} \cdot z'_j \\
-    %
-    &= \sum_{j=1}^n \frac{\partial \; g_j(z_j)}{\partial \; z_j} \cdot 
-    	\frac{\partial \; z_j}{\partial \wbf_i} \quad
-        = \quad 2 \sum_{j=1}^n \frac{1/z_j - y_j}{z_j^2} \cdot 
-        	\frac{\partial \; z_j}{\partial \wbf_i} \\
-    %
-    &= 2 \sum_{j=1}^n \frac{1/z_j - y_j}{z_j^2} \cdot x^{(j)}_i
+	\nabla J(\wbf)_j &= \sum_{i=1}^n \frac{\partial g_i(z_i)}{\partial z_i} \cdot 
+    	\frac{\partial z_i}{\partial w_j}, \quad j=0..d \\
+	&= \sum_{i=1}^n  \cdot 2 \left( \frac{1}{z_i} - y_i \right) 
+    	\cdot \frac{1}{z_i^2} \cdot
+    	\xbf^{(i)}_j, \quad j=0..d \\
 \end{align*}
 
-\newpage
 \item What is the gradient descent update for $\wbf$?
 \[
 	\wbf_i := \wbf_i - \alpha \sum_{j=1}^n \frac{\partial}{\partial \wbf_i} g_j(z_j) ,\quad i=0...d
@@ -321,16 +339,41 @@ some functions $g_i(z_i)$.
 \[
 	\wbf_i := \wbf_i - \alpha \left( 2 \sum_{j=1}^n \frac{1/z_j - y_j}{z_j^2} \cdot x^{(j)}_i \right) , \quad i=0...d
 \]
-
+% \[
+% 	\Abf^T \cdot \frac{2(y-a)^2}{z^2}
+% \]
 \item Write a few lines of python code to compute the loss function $J(\wbf)$ and
 $\nabla J(\wbf)$.
 
-      \begin{lstlisting}
-      def costGrad(A, w):
-          z = np.matmul(A, w)
-          
-          return J, grad
-      \end{lstlisting}
+%       \begin{python}[language=Python]
+% def costGrad(A, w, y):
+% 	z = np.matmul(A, w)
+% 	a = 1/z
+% 	J = np.sum((y-a)**2)
+	
+% 	dJda = 2*(a-y)
+% 	dadz = -1/(z**2)
+% 	dzdw = A.T
+	
+% 	grad = np.matmul(dzdw, dJda*dadz) # dJdw
+	
+% 	return J, grad
+%       \end{python}
+
+\begin{python}
+def costGrad(A, w, y):
+    z = np.matmul(A, w)
+    a = 1/z
+    J = np.sum((y-a)**2)
+    
+    dJda = 2*(a-y)
+    dadz = -1/(z**2)
+    dzdw = A.T
+    
+    grad = np.matmul(dzdw, dJda*dadz) # dJdw
+    
+    return J, grad
+\end{python}
 
 \end{enumerate}
 
@@ -385,13 +428,78 @@ See the following article for more details:
 \end{quote}
 \begin{enumerate}[(a)]
 \item What is the gradient $\nabla_{\Pbf} z_i$?
+\[
+	\nabla_{\Pbf} z_i = \xbf_i\tran \xbf_i
+\]
 
 \item What is the gradient $\nabla_{\Pbf} J(\Pbf)$?
-
+\[
+	\nabla_{\Pbf} J(\Pbf) = \begin{bmatrix}
+		\frac{\partial J(\Pbf)}{\partial \Pbf_{11}} & 
+        \frac{\partial J(\Pbf)}{\partial \Pbf_{12}} & 
+        \hdots & \frac{\partial J(\Pbf)}{\partial \Pbf_{1m}} \\
+        \frac{\partial J(\Pbf)}{\partial \Pbf_{21}} & 
+        \frac{\partial J(\Pbf)}{\partial \Pbf_{22}} & 
+        \hdots & \frac{\partial J(\Pbf)}{\partial \Pbf_{2m}} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        \frac{\partial J(\Pbf)}{\partial \Pbf_{m1}} & 
+        \frac{\partial J(\Pbf)}{\partial \Pbf_{m2}} & 
+        \hdots & \frac{\partial J(\Pbf)}{\partial \Pbf_{mm}} \\
+							\end{bmatrix}
+\]
+\[
+	\nabla_{\Pbf} J(\Pbf)_{ij} = \frac{\partial J(\Pbf)}{\partial \Pbf_{ij}} = 
+    	\frac{\partial J(\Pbf)}{\partial z_i} \cdot
+        \frac{\partial z_i}{\partial \Pbf_{ij}}
+\]
+\[
+	= \sum_{i=1}^n \left[ \frac{1}{y_i} - \frac{1}{z_i} \right] \cdot \xbf_i\tran \xbf_i
+\]
 \item Write a few lines of python code to evaluate $J(\Pbf)$ and
 $\nabla_{\Pbf} J(\Pbf)$ given data $\xbf_i$ and $y_i$.  You can use a for loop.
 
+
+% def loss(A, P, y):
+% 	z = np.matmul(A, np.matmul(P, A.T))
+%     J = np.sum(z/y - np.log(z))
+    
+%     dJdz = 1/np.matmul(A,A.T
+\begin{python}
+def loss(A, P, y):
+	n = A.shape[0]
+	z = np.zeros(n)
+	dadz = np.zeros(n)
+	for i in range(n):
+		x = A[i, :].T
+		z[i] = np.matmul( np.matmul(x.T, P), x)
+		a[i] = (z[i] / y[i]) - np.log(z[i])
+		
+		dadz[i] = (1/y[i] - 1/z[i])
+		dzdx[i] = np.matmul(x.T, x)
+		dJdx[i] = dadz[i]*dzdx[i]
+        
+	J = np.sum(a)
+	grad = np.sum(dJdx)
+	
+	return J, grad
+\end{python}
+
 \item See if you can rewrite (c) without a for loop.  You will need Python broadcasting.
+
+\begin{python}
+def loss(A, P, y):
+	z = np.matmul( np.matmul(A, P), A.T)
+	a = (z / y) - np.log(z)
+	
+	dadz = 1/y - 1/z
+	dzdx = np.matmul(A, A.T)
+	dJdx = dadz * dadz
+	
+	J = np.sum(a)
+	grad = np.sum(dJdx)
+	
+	return J, grad
+\end{python}
 \end{enumerate}
 
 \item \emph{Nested optimization}.  Suppose we are given a loss function
@@ -432,9 +540,29 @@ describe how we can minimize over $\bbf$.  That is, how can we compute,
     \hat{\bbf} := \argmin_{\bbf} J(\abf,\bbf).
 \]
 
+first setup a matrix $\Abf$ and parameter vector $\bf{\beta}$ such that
+\begin{align*}
+	\Abf & = \begin{bmatrix}
+				e^{-a_1 x_1} & e^{-a_2 x_1} & \hdots & e^{-a_d x_1} \\
+                e^{-a_1 x_2} & e^{-a_2 x_2} & \hdots & e^{-a_d x_2} \\
+                \vdots   	 &    \vdots   	& \ddots &   \vdots 	\\
+                e^{-a_1 x_n} & e^{-a_2 x_n} & \hdots & e^{-a_d x_n} \\
+		   \end{bmatrix}
+    & \bf{\beta} = \begin{bmatrix}
+    				b_1 \\ b_2 \\ \vdots \\ b_d
+				 \end{bmatrix} \\ 
+                 \\
+                 \Abf \bf{\beta} &= \ybf 		\\
+\end{align*}
+Then solve for $\bf{\beta}$ using least squares.
+
 \item In the above example, how would we compute the gradients,
 \[
     \nabla_\abf J(\abf,\bbf).
+\]
+
+\[
+	\nabla_\abf J(\abf,\bbf) = 2 \sum_{i=1}^n \left[ \left( y_i - \sum_{j=1}^d b_j e^{-a_j x_i} \right) \sum_{j=1}^d b_j x_i e^{-a_j x_i} \right]
 \]
 
 \end{enumerate}
