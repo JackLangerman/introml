@@ -1,2 +1,5 @@
 .ipynb_checkpoints/
 .DS_Store
+cnn/elephant/
+cnn/test/
+cnn/train/
