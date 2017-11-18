@@ -65,8 +65,12 @@ please contact Sundeep Rangan at <srangan@nyu.edu>.
     * [Demo 8.1: 2D convolutions and convolutional layers in keras](./cnn/convolutions.ipynb)
     * [Demo 8.2: Creating an image set using the Flickr API](./cnn/flickr_images.ipynb)
     * [Demo 8.3: Exploring the deep VGG16 network](./cnn/vgg16.ipynb)
-    * Lab 8:  Transfer learning with a pre-trained network
-* Unit 9:  PCA (To be added)
+    * [Lab 8:  Transfer learning with a pre-trained network](./cnn/lab08_fine_tune_partial.ipynb)
+(GPU optional)
+
+* [Unit 9:  PCA](./pca/readme.md)
+    * [Demo 9:  PCA eigen-faces](./pca/eigen_face.ipynb)
+    * Lab 9: TBD
 * Unit 10:  Clustering and EM (To be added)
     
 
