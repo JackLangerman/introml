@@ -27,4 +27,3 @@ linear algebra and multi-variable calculus.
 The class progresses in a set of guided demos and labs using the following [sequence](sequence.md)
 
 
-
